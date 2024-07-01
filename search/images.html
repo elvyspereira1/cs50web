@@ -2,13 +2,13 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Google Search</title>
+        <title>Google Image Search</title>
         <link rel="stylesheet" href="style.css">
         <link rel="icon" href="favicon.ico" type="image/x-icon">
     </head>
     <body>
         <div class="nav-links">
-            <a href="images.html">Image Search</a>
+            <a href="index.html">Google Search</a>
             <a href="advanced.html">Advanced Search</a>
             <a href="#" class="toggle-menu">
                 <svg class="gb_h" focusable="false" viewBox="0 0 24 24" fill="currentColor">
@@ -18,8 +18,10 @@
             </a>
         </div>
         <div class="search-container">
-            <form action="https://google.com/search">
-                <div class="logo"></div>
+            <div class="logo">
+                <span class="logo-text">images</span>
+            </div>
+            <form action="https://www.google.com/search" method="get">
                 <div class="search-bar">
                     <span class="search-icon">
                         <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -50,21 +52,12 @@
                     <span class="search-image-text">
                         Search by image
                     </span>
-                    <input type="text" name="q" placeholder="Search Google" required>
+                    <input type="text" name="q" placeholder="Search Images" required>
                 </div>
-                <div class="buttons">
-                    <input type="submit" value="Google Search">
-                    <input type="button" value="I'm Feeling Lucky" onclick="luckySearch()">
-                </div>
+                <input type="hidden" name="tbm" value="isch">
+                <br>
+                <input type="submit" value="Image Search">
             </form>
-            </div>
-        <script>
-            function luckySearch() {
-                const query = document.querySelector('input[name="q"]').value;
-                if (query) {
-                    window.location.href = `https://google.com/search?q=${encodeURIComponent(query)}&btnI=I`;
-                }
-            }
-        </script>
+        </div>
     </body>
 </html>
